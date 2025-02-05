@@ -21,29 +21,25 @@ while(user_input.split(" ")[0].isnumeric()):
         companies.update({user_input.split(" ")[0]:1})
     user_input = sys.stdin.readline()
     
-print(array)
-print(companies)
 num_in_company_counted = 0
 c = 1 #which company we're using first
 for i in range(len(array)):
-    print(str(c) + " ___ " + str(i) + " ____ " + str(len(array)))
     if array[i].split(" ")[0] != str(c):
         k = i + 1
         while array[k].split(" ")[0] != str(c):
             k += 1
 
         #swappppppp
+        print(str(array[i].split(" ")[1].strip()) + " " + str(array[k].split(" ")[1].strip()))
         temp = array[i]
         array[i] = array[k]
         array[k] = temp
-        print(array)
     num_in_company_counted+= 1
 
     if num_in_company_counted == companies[str(c)]:
         num_in_company_counted = 0
         c += 1
-    print()
-    print(array)
-    print()
-print(array)
-print(companies)
+
+#prints the whole list after swaps
+#for i in array:
+#    print(i, end="")
