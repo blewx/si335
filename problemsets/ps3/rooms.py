@@ -14,6 +14,7 @@ array = []
 companies = {} #k = company number , v = num ppl in company
 user_input = sys.stdin.readline()
 while(user_input.split(" ")[0].isnumeric()):
+
     array.append(user_input)
     if user_input.split(" ")[0] in companies:
         val = companies[user_input.split(" ")[0]] + 1
@@ -41,7 +42,6 @@ for i in dictionary:
     #print(i)
     #print(dictionary[str(i)])
     temp_dict = {}
-    
     #we want to change i 
     for z in dictionary:
         if z not in pointers:
@@ -86,14 +86,26 @@ can't do it then wait and continue to loop through to find perfect swaps then
 afterwards go back and make non perfect swaps'''
 print("pointers  --- " + str(pointers))
 print("companies --- " + str(companies))
-
+c = 0
 num_in_company_counted = 0
+t = -1
 for i in range(len(array)):
+    old_k = 0
+    for k in pointers:
+        print("i == " + str(i) + "  k == " + str(k) + "  t == " + str(t) + "  pointers_k == " +
+              str(pointers[k]))
+        if t == 0:
+            c = int(old_k)
+            break
+        if i < pointers[k]:
+            c = int(k)
+            break
+        t -= 1
+        old_k = k
+    t = pointers[str(c)] 
+    print(c)
     
-    
-
-
-    if array[i].split(" ")[0] != str(c):
+    '''if array[i].split(" ")[0] != str(c):
         k = i + 1
         while array[k].split(" ")[0] != str(c):
             k += 1
@@ -104,10 +116,7 @@ for i in range(len(array)):
         array[i] = array[k]
         array[k] = temp
     num_in_company_counted+= 1
-
-    if num_in_company_counted == companies[str(c)]:
-        num_in_company_counted = 0
-        c += 1
+    '''
 
 #prints the whole list after swaps
 #for i in array:
