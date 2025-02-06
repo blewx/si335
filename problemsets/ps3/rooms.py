@@ -93,16 +93,16 @@ for i in range(len(array)):
     old_k = 0
     for k in pointers:
         print("i == " + str(i) + "  k == " + str(k) + "  t == " + str(t) + "  pointers_k == " +
-              str(pointers[k]))
+              str(companies[k]))
         if t == 0:
             c = int(old_k)
             break
-        if i < pointers[k]:
+        if i < companies[k]:
             c = int(k)
             break
         t -= 1
         old_k = k
-    t = pointers[str(c)] 
+    t = companies[str(c)] 
     print(c)
     
     '''if array[i].split(" ")[0] != str(c):
