@@ -16,7 +16,8 @@ this program uses less swaps than selection sort.
 #Sources 
 #https://stackoverflow.com/questions/268272/getting-key-with-maximum-value-in-dictionary
 #https://www.w3schools.com/python/ref_string_isnumeric.asp
-
+#https://www.w3schools.com/python/python_ref_dictionary.asp
+#https://www.w3schools.com/python/ref_func_sorted.asp
 
 """
 This function is called after an imperfect swap. It checks to see if the person we just swapped has a 
