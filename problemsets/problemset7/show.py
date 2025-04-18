@@ -321,6 +321,8 @@ def main():
     args = parser.parse_args()
 
     # read in the map
+    print(type(args.mapfile))
+    print(args.mapfile)
     world = World(args.mapfile)
 
     # read in moves
